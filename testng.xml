@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd">
+<suite name="E2E Test Suite" >
+    <test name="Login and Home page">
+        <classes>
+            <class name="org.foodics.tests.amazaonTests.LogInTest"/>
+            <class name="org.foodics.tests.amazaonTests.HomePageTest"/>
+        </classes>
+    </test>
+</suite>
