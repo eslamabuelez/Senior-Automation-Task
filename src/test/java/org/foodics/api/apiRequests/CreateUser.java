@@ -16,10 +16,13 @@ public class CreateUser {
         requestBody.put("job", job);
 
         return RestAssured.given()
-                .baseUri(baseURL)
+
                 .contentType("application/json")
                 .body(requestBody.toString())
                 .when()
-                .post("/api/users");
+                .post(baseURL+"/api/users")
+                .then()
+                .extract()
+                .response();
     }
 }
