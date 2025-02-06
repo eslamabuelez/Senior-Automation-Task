@@ -1,9 +1,22 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd">
-<suite name="E2E Test Suite" >
-    <test name="Login and Home page">
-        <classes>
-            <class name="org.foodics.tests.amazaonTests.LogInTest"/>
-            <class name="org.foodics.tests.amazaonTests.HomePageTest"/>
-        </classes>
-    </test>
+<suite name="Parent Suite - All Tests">
+
+    <suite name="API Test Suite">
+        <test name="API Tests">
+            <classes>
+                <class name="org.foodics.tests.APITests.CreateUserTest"/>
+                <class name="org.foodics.tests.APITests.GetUserTest"/>
+            </classes>
+        </test>
+    </suite>
+
+    <suite name="Amazon E2E">
+        <test name="Login and Home page Tests">
+            <classes>
+                <class name="org.foodics.tests.amazaonTests.LogInTest"/>
+                <class name="org.foodics.tests.amazaonTests.HomePageTest"/>
+            </classes>
+        </test>
+    </suite>
+
 </suite>

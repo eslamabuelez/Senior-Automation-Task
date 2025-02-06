@@ -9,13 +9,16 @@ public class GetUser {
     public static Response getUser(String id) {
         APIConfigReader apiConfigReader = new APIConfigReader();
         baseURL = apiConfigReader.getProperty("baseURL");
-
+        System.out.println("URL is : "+baseURL+"/api/users/"+id);
         return RestAssured.given()
                 .pathParam("id", id)  // Path parameter for ID
                 .when()
-                .get(baseURL + "/{id}")  // Corrected URL syntax
+                .get(baseURL + "/api/users/{id}")  // Corrected URL syntax
                 .then()
+
                 .extract()
                 .response();
+
     }
+
 }
