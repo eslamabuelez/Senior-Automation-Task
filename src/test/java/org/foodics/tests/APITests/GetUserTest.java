@@ -1,19 +1,19 @@
 package org.foodics.tests.APITests;
 
 import io.restassured.response.Response;
-import org.foodics.api.apiRequests.APIConfigReader;
 import org.foodics.api.apiRequests.GetUser;
 import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;
 
-public class getUserTest extends APIConfigReader{
+public class GetUserTest {
 
     @Test(dependsOnMethods = "org.foodics.tests.APITests.CreateUserTest.testCreateUser")
     public void testGetUser(ITestContext context){
 
         //GetUser getUser = new GetUser();
         String id = (String) context.getAttribute("id");
+        System.out.println("id is "+ id);
         Assert.assertNotNull(id, "User ID should be available from CreateUserTest");
 
         // Call GetUser API
